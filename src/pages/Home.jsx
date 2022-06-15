@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { Flex, Heading, HStack, Input, Button } from "@chakra-ui/react";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <Flex
       flexDirection="column"
@@ -24,7 +27,13 @@ const Home = () => {
           fontSize="20"
           fontWeight="600"
         />
-        <Button borderRadius="32" paddingX="10" paddingY="6" fontSize="20">
+        <Button
+          borderRadius="32"
+          paddingX="10"
+          paddingY="6"
+          fontSize="20"
+          onClick={() => navigate("/logofont")}
+        >
           Get Started
         </Button>
       </HStack>
