@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Home, LogoFont } from "pages";
-import { Sidebar } from "components";
 import { Box } from "@chakra-ui/react";
+import { Home, LogoFont, LogoIcon } from "pages";
+import { Sidebar } from "components";
 
 function App() {
   const { pathname } = useLocation();
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/logofont" element={<LogoFont />} />
+        <Route path="/logoicon" element={<LogoIcon />} />
       </Routes>
     </Box>
   );

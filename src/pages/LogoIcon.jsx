@@ -1,12 +1,12 @@
 import { Box, Input, Grid } from "@chakra-ui/react";
-import { FontCard } from "components";
+import { IconCard } from "components";
 
-const LogoFont = () => {
+const LogoIcon = () => {
   return (
     <Box ml={{ base: 0, md: "15rem" }} pt="8">
       <Input
         display="block"
-        placeholder="Business Name"
+        placeholder="Search for a logomark"
         borderRadius="32"
         bgColor="bg.500"
         paddingX="4"
@@ -18,17 +18,17 @@ const LogoFont = () => {
         m="auto"
       />
       <Grid mt="8" templateColumns="repeat( 2, minmax(100px, 1fr) )">
-        <FontCard />
-        <FontCard />
-        <FontCard />
-        <FontCard />
-        <FontCard />
-        <FontCard />
-        <FontCard />
-        <FontCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
+        <IconCard />
       </Grid>
     </Box>
   );
 };
 
-export { LogoFont };
+export { LogoIcon };
