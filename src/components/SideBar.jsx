@@ -43,7 +43,12 @@ const Sidebar = () => {
         <ListItem onClick={() => navigate("/logofont")}>
           Select a wordmark
         </ListItem>
-        <ListItem py="2" onClick={() => navigate("/logoicon")}>
+        <ListItem
+          py="2"
+          onClick={() =>
+            logo.fontFamily !== "" ? navigate("/logoicon") : null
+          }
+        >
           Search for a logomark
         </ListItem>
         <ListItem>Download your logo</ListItem>
