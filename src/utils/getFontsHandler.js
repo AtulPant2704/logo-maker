@@ -2,7 +2,7 @@ import { getFontsService } from "services";
 
 const getRandomFonts = (fonts) => {
   let fontsArr = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     const randomIndex = Math.floor(Math.random() * 1001);
     fontsArr.push(fonts[randomIndex]);
   }
