@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-import { Box, OrderedList, ListItem, Heading } from "@chakra-ui/react";
+import { Box, OrderedList, ListItem, Heading, Image } from "@chakra-ui/react";
 import { useLogo } from "context";
 
 const Sidebar = () => {
@@ -27,6 +27,14 @@ const Sidebar = () => {
           href={`https://fonts.googleapis.com/css?family=${logo.fontFamily}`}
         />
       </Helmet>
+      {logo.iconImg !== "" ? (
+        <Image
+          src={logo.iconImg}
+          alt={logo.iconName}
+          position="absolute"
+          top="5%"
+        />
+      ) : null}
       {logo.fontFamily !== "" ? (
         <Heading
           as="h1"
@@ -34,7 +42,7 @@ const Sidebar = () => {
           css={{ fontFamily: logo.fontFamily }}
           _hover={{ cursor: "default" }}
           position="absolute"
-          top="5%"
+          top={logo.iconImg ? "15%" : "5%"}
         >
           Hello
         </Heading>

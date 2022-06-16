@@ -1,6 +1,13 @@
 import { Image, GridItem } from "@chakra-ui/react";
+import { useLogo } from "context";
 
 const IconCard = ({ images, family_name }) => {
+  const { setLogo } = useLogo();
+
+  const iconTypeHandler = () => {
+    setLogo((prev) => ({ ...prev, iconImg: images["64"] }));
+  };
+
   return (
     <GridItem
       display="flex"
@@ -10,6 +17,7 @@ const IconCard = ({ images, family_name }) => {
       borderLeft="1px solid var(--chakra-colors-gray-300)"
       _hover={{ cursor: "pointer" }}
       p="16"
+      onClick={iconTypeHandler}
     >
       <Image src={images["64"]} alt={family_name} />
     </GridItem>
