@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Heading, GridItem } from "@chakra-ui/react";
 
-const FontCard = () => {
+const FontCard = ({ family, files }) => {
   const navigate = useNavigate();
 
   return (
@@ -15,7 +15,7 @@ const FontCard = () => {
       p="16"
       onClick={() => navigate("/logoicon")}
     >
-      <Heading>Hello</Heading>
+      <Heading css={{ fontFamily: family }}>Hello</Heading>
     </GridItem>
   );
 };
