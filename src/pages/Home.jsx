@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { Flex, Heading, HStack, Input, Button } from "@chakra-ui/react";
+import { useLogo } from "context";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { logo, setLogo } = useLogo();
 
   return (
     <Flex
@@ -26,6 +28,10 @@ const Home = () => {
           color="white"
           fontSize="20"
           fontWeight="600"
+          value={logo.name}
+          onChange={(e) =>
+            setLogo((prev) => ({ ...prev, name: e.target.value }))
+          }
         />
         <Button
           borderRadius="32"
@@ -33,6 +39,7 @@ const Home = () => {
           paddingY="6"
           fontSize="20"
           onClick={() => navigate("/logofont")}
+          isDisabled={logo.name === ""}
         >
           Get Started
         </Button>
