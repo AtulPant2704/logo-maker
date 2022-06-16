@@ -19,7 +19,7 @@ const FontCard = ({ family }) => {
       alignItems="center"
       borderTop="1px solid var(--chakra-colors-gray-300)"
       borderLeft="1px solid var(--chakra-colors-gray-300)"
-      _hover={{ bgColor: "bg.500", color: "white" }}
+      _hover={{ bgColor: "bg.500", color: "white", cursor: "pointer" }}
       p="16"
       onClick={fontTypeHandler}
     >
