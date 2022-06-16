@@ -1,6 +1,12 @@
-import { Box, OrderedList, ListItem } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import { Box, OrderedList, ListItem, Heading } from "@chakra-ui/react";
+import { useLogo } from "context";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const { logo } = useLogo();
+
   return (
     <Box
       as="aside"
@@ -15,9 +21,31 @@ const Sidebar = () => {
       fontWeight="semibold"
       fontSize="lg"
     >
-      <OrderedList _hover={{ cursor: "default" }}>
-        <ListItem>Select a wordmark</ListItem>
-        <ListItem py="2">Search for a logomark</ListItem>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href={`https://fonts.googleapis.com/css?family=${logo.fontFamily}`}
+        />
+      </Helmet>
+      {logo.fontFamily !== "" ? (
+        <Heading
+          as="h1"
+          size="3xl"
+          css={{ fontFamily: logo.fontFamily }}
+          _hover={{ cursor: "default" }}
+          position="absolute"
+          top="5%"
+        >
+          Hello
+        </Heading>
+      ) : null}
+      <OrderedList _hover={{ cursor: "pointer" }}>
+        <ListItem onClick={() => navigate("/logofont")}>
+          Select a wordmark
+        </ListItem>
+        <ListItem py="2" onClick={() => navigate("/logoicon")}>
+          Search for a logomark
+        </ListItem>
         <ListItem>Download your logo</ListItem>
       </OrderedList>
     </Box>
