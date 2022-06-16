@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { Heading, GridItem } from "@chakra-ui/react";
+import { Image, GridItem } from "@chakra-ui/react";
 
-const FontCard = () => {
-  const navigate = useNavigate();
-
+const IconCard = () => {
   return (
     <GridItem
       display="flex"
@@ -19,11 +16,10 @@ const FontCard = () => {
         },
       }}
       p="16"
-      onClick={() => navigate("/logoicon")}
     >
-      <Heading>Hello</Heading>
+      <Image src="https://bit.ly/dan-abramov" alt="Dan Abramov" />
     </GridItem>
   );
 };
 
-export { FontCard };
+export { IconCard };
