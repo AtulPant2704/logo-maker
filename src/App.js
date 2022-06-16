@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import { Home, LogoFont, LogoIcon } from "pages";
+import { Home, LogoFont, LogoIcon, DownloadLogo } from "pages";
 import { Sidebar } from "components";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/logofont" element={<LogoFont />} />
         <Route path="/logoicon" element={<LogoIcon />} />
+        <Route path="/download" element={<DownloadLogo />} />
       </Routes>
     </Box>
   );
