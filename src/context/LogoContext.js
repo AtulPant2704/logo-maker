@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { getIconTokenHandler } from "utils/getIconTokenHandler";
+import { getIconTokenHandler } from "utils";
 
 const initialState = {
   name: "",
