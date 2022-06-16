@@ -1,15 +1,22 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { getIconTokenHandler } from "utils/getIconTokenHandler";
 
 const initialState = {
   name: "",
   fontFamily: "",
-  icon: "",
+  iconName: "",
+  iconImg: "",
+  iconToken: "",
 };
 
 const LogoContext = createContext(initialState);
 
 const LogoProvider = ({ children }) => {
   const [logo, setLogo] = useState(initialState);
+
+  useEffect(() => {
+    getIconTokenHandler(setLogo);
+  }, []);
 
   return (
     <LogoContext.Provider value={{ logo, setLogo }}>
