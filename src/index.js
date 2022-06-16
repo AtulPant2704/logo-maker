@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "theme";
+import { LogoProvider } from "context";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -11,9 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider resetCSS="true" theme={theme}>
-      <Router>
-        <App />
-      </Router>
+      <LogoProvider>
+        <Router>
+          <App />
+        </Router>
+      </LogoProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
