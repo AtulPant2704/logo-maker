@@ -44,7 +44,7 @@ const Sidebar = () => {
           position="absolute"
           top={logo.iconImg ? "15%" : "5%"}
         >
-          Hello
+          {logo.name}
         </Heading>
       ) : null}
       <OrderedList _hover={{ cursor: "pointer" }}>
@@ -59,7 +59,13 @@ const Sidebar = () => {
         >
           Search for a logomark
         </ListItem>
-        <ListItem>Download your logo</ListItem>
+        <ListItem
+          onClick={() =>
+            logo.fontFamily !== "" ? navigate("/download") : null
+          }
+        >
+          Download your logo
+        </ListItem>
       </OrderedList>
     </Box>
   );
