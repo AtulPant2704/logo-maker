@@ -16,6 +16,9 @@ const LogoFont = () => {
     <Box ml={{ base: 0, md: "15rem" }} pt="8">
       <Input
         display="block"
+        position="sticky"
+        h="3rem"
+        top="2rem"
         placeholder="Business Name"
         maxLength="10"
         borderRadius="32"

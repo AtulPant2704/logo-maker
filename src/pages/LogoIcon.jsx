@@ -34,6 +34,9 @@ const LogoIcon = () => {
     <Box ml={{ base: 0, md: "15rem" }} pt="8">
       <Input
         display="block"
+        position="sticky"
+        h="3rem"
+        top="2rem"
         placeholder="Search for a logoicon"
         borderRadius="32"
         bgColor="bg.500"
