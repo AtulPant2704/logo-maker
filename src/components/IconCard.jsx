@@ -7,7 +7,7 @@ const IconCard = ({ images, family_name }) => {
   const { setLogo } = useLogo();
 
   const iconTypeHandler = () => {
-    setLogo((prev) => ({ ...prev, iconImg: images["64"] }));
+    setLogo((prev) => ({ ...prev, iconImg: images["256"] }));
     navigate("/download");
   };
 

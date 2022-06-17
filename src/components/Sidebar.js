@@ -34,12 +34,13 @@ const Sidebar = () => {
           alt={logo.iconName}
           position="absolute"
           top="5%"
+          h="64px"
         />
       ) : null}
       {logo.fontFamily !== "" ? (
         <Heading
           as="h1"
-          size="3xl"
+          size="xl"
           css={{ fontFamily: logo.fontFamily }}
           _hover={{ cursor: "default" }}
           position="absolute"

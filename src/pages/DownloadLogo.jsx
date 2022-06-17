@@ -42,7 +42,7 @@ const DownloadLogo = () => {
         h="25rem"
         ref={elementRef}
       >
-        <Image src={logo.iconImg} alt={logo.iconName} w="12rem" h="12rem" />
+        <Image src={logo.iconImg} alt={logo.iconName} />
         <Heading
           as="h1"
           size="3xl"
