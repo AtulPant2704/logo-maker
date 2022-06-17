@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Input, Grid } from "@chakra-ui/react";
+import { Box, Input, Grid, Flex, Heading } from "@chakra-ui/react";
 import { useLogo } from "context";
 import { getFontsHandler } from "utils";
 import { FontCard } from "components";
@@ -30,10 +30,15 @@ const LogoFont = () => {
         value={logo.name}
         onChange={(e) => setLogo((prev) => ({ ...prev, name: e.target.value }))}
       />
+      {logo.name === "" ? (
+        <Flex justifyContent="center" alignItems="center" h="80vh">
+          <Heading>Enter logo name</Heading>
+        </Flex>
+      ) : null}
       <Grid mt="8" templateColumns="repeat( 2, minmax(100px, 1fr) )">
-        {fonts.map((font) => (
-          <FontCard key={font.family} {...font} />
-        ))}
+        {logo.name
+          ? fonts.map((font) => <FontCard key={font.family} {...font} />)
+          : null}
       </Grid>
     </Box>
   );
