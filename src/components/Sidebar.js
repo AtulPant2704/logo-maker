@@ -1,12 +1,46 @@
 import { Helmet } from "react-helmet-async";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Box, OrderedList, ListItem, Heading, Image } from "@chakra-ui/react";
+import {
+  Box,
+  OrderedList,
+  ListItem,
+  Heading,
+  Image,
+  useToast,
+} from "@chakra-ui/react";
 import { useLogo } from "context";
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const toast = useToast();
   const { logo } = useLogo();
+
+  const showAlert = (msg) => {
+    toast({
+      description: `${msg}`,
+      status: "warning",
+      duration: 2000,
+      isClosable: true,
+    });
+  };
+
+  const sidebarNavigateHandler = (path) => {
+    switch (path) {
+      case "/logoicon":
+        logo.fontFamily !== ""
+          ? navigate(path)
+          : showAlert("Please select logo font");
+        break;
+      case "/download":
+        logo.iconImg !== ""
+          ? navigate(path)
+          : showAlert("Please select logo icon");
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <Box
@@ -59,15 +93,13 @@ const Sidebar = () => {
         <ListItem
           py="2"
           color={pathname === "/logoicon" ? "white" : "gray.500"}
-          onClick={() =>
-            logo.fontFamily !== "" ? navigate("/logoicon") : null
-          }
+          onClick={() => sidebarNavigateHandler("/logoicon")}
         >
           Select the logo icon
         </ListItem>
         <ListItem
           color={pathname === "/download" ? "white" : "gray.500"}
-          onClick={() => (logo.iconImg !== "" ? navigate("/download") : null)}
+          onClick={() => sidebarNavigateHandler("/download")}
         >
           Download your logo
         </ListItem>
