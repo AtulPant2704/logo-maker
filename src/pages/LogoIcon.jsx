@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Input,
@@ -8,10 +9,11 @@ import {
   CircularProgress,
 } from "@chakra-ui/react";
 import { useLogo } from "context";
-import { getIconsHandler } from "utils";
+import { getIconsHandler, navigateHandler } from "utils";
 import { IconCard } from "components";
 
 const LogoIcon = () => {
+  const navigate = useNavigate();
   const { logo, setLogo } = useLogo();
   const [icons, setIcons] = useState([]);
   const [iconLoader, setIconLoader] = useState(false);
@@ -29,6 +31,10 @@ const LogoIcon = () => {
       }
     }, 300);
   }, [logo.iconName, logo.iconToken]);
+
+  useEffect(() => {
+    navigateHandler(logo, navigate);
+  }, []);
 
   return (
     <Box ml={{ base: 0, md: "15rem" }} pt="8">

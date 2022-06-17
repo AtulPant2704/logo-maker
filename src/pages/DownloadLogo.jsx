@@ -1,12 +1,19 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { exportComponentAsPNG } from "react-component-export-image";
 import { Flex, Button, Image, Heading } from "@chakra-ui/react";
 import { useLogo } from "context";
+import { navigateHandler } from "utils";
 
 const DownloadLogo = () => {
+  const navigate = useNavigate();
   const { logo } = useLogo();
   const elementRef = useRef();
+
+  useEffect(() => {
+    navigateHandler(logo, navigate);
+  }, []);
 
   return (
     <Flex
