@@ -2,7 +2,7 @@ import { getFontsService } from "services";
 
 const getRandomFonts = (fonts) => {
   let fontsArr = [];
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 100; i++) {
     const randomIndex = Math.floor(Math.random() * 1001);
     const findFamily = fontsArr.some(
       (font) => font["family"] === fonts[randomIndex]["family"]
