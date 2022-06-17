@@ -35,7 +35,6 @@ const DownloadLogo = () => {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        gap="4"
         bgColor="bg.500"
         p="4"
         w="25rem"
@@ -46,6 +45,7 @@ const DownloadLogo = () => {
         <Heading
           as="h1"
           size="3xl"
+          mt="4"
           css={{ fontFamily: logo.fontFamily }}
           color="white"
           w="100%"
