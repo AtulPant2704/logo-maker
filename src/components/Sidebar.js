@@ -1,10 +1,11 @@
 import { Helmet } from "react-helmet";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Box, OrderedList, ListItem, Heading, Image } from "@chakra-ui/react";
 import { useLogo } from "context";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { logo } = useLogo();
 
   return (
@@ -48,21 +49,24 @@ const Sidebar = () => {
         </Heading>
       ) : null}
       <OrderedList _hover={{ cursor: "pointer" }}>
-        <ListItem onClick={() => navigate("/logofont")}>
-          Select a wordmark
+        <ListItem
+          color={pathname === "/logofont" ? "white" : "gray.500"}
+          onClick={() => navigate("/logofont")}
+        >
+          Select the logo font
         </ListItem>
         <ListItem
           py="2"
+          color={pathname === "/logoicon" ? "white" : "gray.500"}
           onClick={() =>
             logo.fontFamily !== "" ? navigate("/logoicon") : null
           }
         >
-          Search for a logomark
+          Select the logo icon
         </ListItem>
         <ListItem
-          onClick={() =>
-            logo.fontFamily !== "" ? navigate("/download") : null
-          }
+          color={pathname === "/download" ? "white" : "gray.500"}
+          onClick={() => (logo.iconImg !== "" ? navigate("/download") : null)}
         >
           Download your logo
         </ListItem>
