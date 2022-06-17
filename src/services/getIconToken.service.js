@@ -8,7 +8,7 @@ const getIconTokenService = () => {
 
   return axios.post(
     "https://api.flaticon.com/v3/app/authentication",
-    { apikey: "21f60effb7425d490e23f52a1b1d59091127b1b3" },
+    { apikey: process.env.REACT_APP_FLAT_ICON_KEY },
     headers
   );
 };
