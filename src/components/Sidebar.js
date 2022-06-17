@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Box, OrderedList, ListItem, Heading, Image } from "@chakra-ui/react";
 import { useLogo } from "context";

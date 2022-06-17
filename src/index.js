@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "theme";
 import { LogoProvider } from "context";
@@ -14,7 +15,9 @@ root.render(
     <ChakraProvider resetCSS="true" theme={theme}>
       <LogoProvider>
         <Router>
-          <App />
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
         </Router>
       </LogoProvider>
     </ChakraProvider>

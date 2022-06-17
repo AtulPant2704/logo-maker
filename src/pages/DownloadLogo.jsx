@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { exportComponentAsPNG } from "react-component-export-image";
 import { Flex, Button, Image, Heading } from "@chakra-ui/react";
 import { useLogo } from "context";
