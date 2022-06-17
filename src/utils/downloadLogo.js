@@ -1,7 +1,7 @@
-import * as htmlToImage from "html-to-image";
+import { toPng } from "html-to-image";
 
 const downloadLogo = async (element) => {
-  const dataUrl = await htmlToImage.toPng(element);
+  const dataUrl = await toPng(element);
   const link = document.createElement("a");
   link.download = "logo.png";
   link.href = dataUrl;
