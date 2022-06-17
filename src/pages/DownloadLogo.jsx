@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
+import { exportComponentAsPNG } from "react-component-export-image";
 import { Flex, Button, Image, Heading } from "@chakra-ui/react";
 import { useLogo } from "context";
-import { downloadLogo } from "utils";
 
 const DownloadLogo = () => {
   const { logo } = useLogo();
@@ -21,7 +21,7 @@ const DownloadLogo = () => {
         paddingX="10"
         paddingY="6"
         fontSize="20"
-        onClick={() => downloadLogo(elementRef.current)}
+        onClick={() => exportComponentAsPNG(elementRef)}
       >
         Download
       </Button>
