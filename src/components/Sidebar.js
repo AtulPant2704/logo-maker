@@ -22,13 +22,14 @@ const Sidebar = () => {
       status: "warning",
       duration: 2000,
       isClosable: true,
+      position: "bottom-right",
     });
   };
 
   const sidebarNavigateHandler = (path) => {
     switch (path) {
       case "/logoicon":
-        logo.fontFamily !== ""
+        logo.fontFamily !== "" && logo.name !== ""
           ? navigate(path)
           : showAlert("Please select logo font");
         break;
