@@ -48,6 +48,9 @@ const DownloadLogo = () => {
           size="3xl"
           css={{ fontFamily: logo.fontFamily }}
           color="white"
+          w="100%"
+          display="flex"
+          justifyContent="center"
         >
           {logo.name}
         </Heading>
