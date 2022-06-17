@@ -17,6 +17,7 @@ const LogoFont = () => {
       <Input
         display="block"
         placeholder="Business Name"
+        maxLength="10"
         borderRadius="32"
         bgColor="bg.500"
         paddingX="4"

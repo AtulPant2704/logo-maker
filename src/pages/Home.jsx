@@ -23,6 +23,7 @@ const Home = () => {
           placeholder="Type your business name"
           borderRadius="32"
           w="30rem"
+          maxLength="10"
           paddingX="4"
           paddingY="6"
           color="white"
