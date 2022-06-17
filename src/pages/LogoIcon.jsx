@@ -30,8 +30,6 @@ const LogoIcon = () => {
     }, 300);
   }, [logo.iconName, logo.iconToken]);
 
-  console.log(iconLoader);
-
   return (
     <Box ml={{ base: 0, md: "15rem" }} pt="8">
       <Input
